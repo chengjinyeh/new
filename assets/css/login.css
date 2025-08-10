@@ -1,0 +1,73 @@
+body {
+    font-family: Arial, sans-serif;                /* 設定全站主要字型為 Arial，如果沒有則用無襯線字型 */
+    background-color: #f2f2f2;                     /* 設定網頁背景顏色為淡灰色 */
+    display: flex;                                 /* 使用 Flex 排版，讓內容容易置中 */
+    justify-content: center;                       /* 將主內容水平置中 */
+    align-items: center;                           /* 將主內容垂直置中 */
+    height: 100vh;                                 /* 設定高度為視窗的 100%（vh = 視窗高度單位）*/
+    margin: 0;                                     /* 移除預設外距，讓內容貼齊邊緣 */
+}
+
+.login-container {
+    display: flex;                                 /* 使用 Flex 排版 */
+    justify-content: center;                       /* 水平置中內容 */
+    align-items: center;                           /* 垂直置中內容 */
+    flex-direction: column;                        /* 垂直堆疊子元素 */
+}
+
+.login-box {
+    background-color: #fff;                        /* 背景設為純白色 */
+    padding: 130px;                                /* 內距空間（上下左右）都設 130px，讓盒子很寬敞 */
+    border-radius: 18px;                           /* 邊角圓弧 18px */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);      /* 盒子陰影（柔和立體感） */
+    width: 600px;                                  /* 盒子寬度固定 600px */
+    text-align: center;                            /* 內容置中（文字與按鈕） */
+}
+
+h2 {
+    margin-bottom: 20px;                           /* 標題下方間距 20px */
+    font-size: 55px;                               /* 標題字體大小 55px */
+    color: #333;                                   /* 標題顏色為深灰色 */
+}
+
+.textbox {
+    margin-bottom: 20px;                           /* 每個輸入區塊下方間距 20px */
+    text-align: left;                              /* 文字靠左對齊（label與input） */
+}
+
+.textbox input {
+    width: 100%;                                   /* 輸入欄寬度填滿容器 */
+    padding: 15px;                                 /* 內部留白 15px */
+    margin-top: 5px;                               /* 跟 label 之間間距 5px */
+    border-radius: 10px;                           /* 圓角邊框 10px */
+    border: 1px solid #ddd;                        /* 邊框為 1px 淺灰色線 */
+}
+
+.textbox label {
+    font-size: 24px;                               /* 標籤文字大小 24px */
+    color: #666;                                   /* 標籤文字顏色為淺灰色 */
+}
+
+.buttons {
+    display: flex;                                 /* 使用 Flex 讓按鈕能並排顯示 */
+    justify-content: center;                       /* 水平置中按鈕 */
+}
+
+button {
+    width: 48%;                                    /* 按鈕寬度為父容器的 48%（兩個按鈕能一排） */
+    padding: 15px;                                 /* 內部留白 15px */
+    font-size: 20px;                               /* 字體大小 20px */
+    border: none;                                  /* 沒有邊框線 */
+    border-radius: 12px;                           /* 圓角邊框 12px */
+    cursor: pointer;                               /* 滑鼠移上去變成小手（可點擊提示） */
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;                     /* 登入按鈕背景色為綠色 */
+    color: white;                                  /* 文字顏色為白色 */
+}
+
+button#google-signin {
+    background-color: #4285F4;                     /* Google登入按鈕背景色為藍色（Google官方配色） */
+    color: white;                                  /* 文字顏色為白色 */
+}

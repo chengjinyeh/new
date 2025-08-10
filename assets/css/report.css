@@ -1,0 +1,156 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 700px;
+    min-width: 320px;
+    min-height: 600px;
+    margin: 30px auto 0 auto;
+    padding: 24px 20px 30px 20px;
+    background: #fff;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.13);
+    border-radius: 14px;
+}
+
+/* 導航列 */
+header nav ul {
+    list-style: none;
+    text-align: right;
+    margin: 0 0 20px 0;
+    padding: 0;
+}
+header nav ul li {
+    display: inline;
+    margin-left: 10px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+/* 主標題 */
+h1 {
+    font-size: 35px;
+    color: #007BFF;
+    margin-bottom: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: left;
+}
+
+/* 表單欄位/群組統一左齊&寬度 */
+.form-group, .form-row2 {
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+/* label */
+.form-group label, .type-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+/* 可疑網址input、下拉都RWD */
+#suspicious-url,
+#select-type {
+    width: 100%;
+    max-width: 600px;
+    min-width: 140px;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* 檢舉類型label和送出同排 */
+.form-row2 {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+/* 下拉選單吃滿剩餘空間，按鈕寬度不變 */
+#select-type {
+    flex: 1 1 0%;
+    min-width: 0;
+    max-width: none;
+}
+
+/* 送出按鈕 */
+button {
+    width: 120px;
+    max-width: 120px;
+    min-width: 80px;
+    padding: 12px 0;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+button:hover {
+    background: #0056b3;
+}
+
+/* 輔助說明 */
+.info-text {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* 統計區/宣導圖 */
+.stats, .map {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.map img {
+    width: 80%;
+    max-width: 100%;
+    height: auto;
+    margin-top: 6px;      /* 讓上下都不會太寬 */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* RWD：中螢幕 */
+@media (max-width: 600px) {
+    .container { width: 95%; padding: 12px 4vw 20px 4vw; }
+    .map img { width: 95%; }
+    .form-group, .form-row2 { max-width: 95vw; }
+}
+
+/* RWD：小螢幕 */
+@media (max-width: 600px) {
+    .form-row2 {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 100%;
+    }
+    button {
+        margin-top: 8px;
+        width: 100%;
+        max-width: 100%;
+    }
+    #select-type, #suspicious-url {
+        width: 100%;
+        max-width: 100%;
+    }
+    .form-group, .form-row2 { max-width: 100%; }
+}

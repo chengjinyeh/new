@@ -1,0 +1,149 @@
+
+<!DOCTYPE html> <!-- HTML5 文件宣告 -->
+<html lang="zh-TW"> <!-- 網頁語言設定為繁體中文 -->
+<head>
+  <meta charset="UTF-8"> <!-- 設定字元編碼為UTF-8 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 響應式設定，手機也能美觀 -->
+  <title>客服專區 | WS&BP 網站安全</title> <!-- 頁籤標題 -->
+  <!-- 載入 Google 字體 -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- 載入 Boxicons icon 字體 -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+  <style>
+    body {
+      font-family: 'Poppins', '微軟正黑體', sans-serif; /* 設定全站字體 */
+      background: #f6f8fb;  /* 頁面背景顏色（淡灰藍） */
+      color: #1b263b;       /* 全站預設文字顏色 */
+      margin: 0;            /* 取消預設頁面邊距 */
+    }
+    .support-container {
+      max-width: 700px;     /* 內容最大寬度 700px */
+      margin: 40px auto 0;  /* 距離上方 40px、左右自動置中 */
+      background: #fff;     /* 背景白色 */
+      border-radius: 16px;  /* 圓角外觀 */
+      box-shadow: 0 4px 18px rgba(40,50,70,0.09); /* 輕量陰影 */
+      padding: 36px 28px 28px 28px; /* 內距，內容不會貼邊 */
+      position: relative;   /* 內部元素可使用絕對定位 */
+    }
+    .support-info h2 {
+      font-size: 1.7rem;    /* 主標題字級 */
+      color: #2046d3;       /* 主標題顏色（深藍） */
+      margin-bottom: 16px;  /* 與下方間隔 */
+      font-weight: 600;     /* 粗體 */
+    }
+    .support-info ul {
+      padding: 0;           /* 清除預設內距 */
+      margin: 0 0 24px 0;   /* 下方 24px 間隔 */
+      list-style: none;     /* 移除項目前的圓點 */
+    }
+    .support-info li {
+      margin-bottom: 16px;  /* FAQ 每題下方間距 */
+      line-height: 1.8;     /* 行距讓閱讀舒適 */
+    }
+    .support-info strong {
+      color: #143e7a;       /* 問題字加深藍色 */
+      font-weight: 600;     /* 粗體 */
+      display: inline-block;/* 可設 margin-bottom */
+      margin-bottom: 2px;
+    }
+    .contact-details {
+      background: #f0f5fa;  /* 淺藍色背景區塊 */
+      border-radius: 10px;  /* 圓角外觀 */
+      padding: 18px 18px 10px 18px; /* 內距 */
+      font-size: 1rem;      /* 字體大小 */
+    }
+    .contact-details p {
+      margin: 0 0 14px 0;   /* 每筆聯絡資料底下 14px 間隔 */
+      display: flex;        /* icon 與文字水平排列 */
+      align-items: center;  /* 垂直置中 */
+    }
+    .contact-details i {
+      color: #2046d3;       /* icon 顏色（深藍） */
+      font-size: 1.15em;    /* icon 大小 */
+      margin-right: 8px;    /* icon 與文字間距 */
+    }
+    .contact-details a {
+      color: #2046d3;       /* 連結顏色（深藍） */
+      text-decoration: underline; /* 有底線 */
+      transition: color 0.18s;    /* hover 變色動畫 */
+    }
+    .contact-details a:hover {
+      color: #3c5de3;       /* 滑鼠移過連結時顏色變淡藍 */
+    }
+    /* 返回首頁按鈕樣式 */
+    .back-home-btn {
+      display: flex;             /* icon+文字 水平置中 */
+      align-items: center;       /* 垂直置中 */
+      justify-content: center;   /* 置中 */
+      background: #2046d3;       /* 藍色背景 */
+      color: #fff;               /* 白色字體 */
+      font-size: 1rem;           /* 字體大小 */
+      padding: 9px 22px;         /* 內距 */
+      border-radius: 7px;        /* 圓角 */
+      text-decoration: none;     /* 取消底線 */
+      font-weight: 500;          /* 中粗體 */
+      margin: 38px auto 0 auto;  /* 上方 38px 與上區塊區隔，自動水平置中 */
+      width: fit-content;        /* 寬度自適應內容 */
+      box-shadow: 0 2px 8px rgba(32,70,211,0.07); /* 輕量陰影 */
+      transition: background 0.18s; /* hover 動畫 */
+    }
+    .back-home-btn i {
+      font-size: 1.2em;          /* icon 大小 */
+      margin-right: 7px;         /* icon 與文字間距 */
+    }
+    .back-home-btn:hover {
+      background: #1933a9;       /* 滑鼠移過按鈕時顏色變深藍 */
+      color: #fff;
+    }
+    /* 手機版樣式調整 */
+    @media (max-width: 600px) {
+  .back-home-btn {
+    width: fit-content !important;  /* 強制只要包住內容 */
+    min-width: 80px;               /* 可以加個最小寬，避免太窄 */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="support-container"> <!-- 客服內容主要區塊 -->
+    <section class="support-info"> <!-- FAQ 與聯絡資訊 -->
+      <h2>插件專區</h2> <!-- 區塊主標題 -->
+      <ul>
+        <li>
+          <strong>Q：還沒想？</strong><br>
+         還沒想
+        </li>
+        <li>
+          <strong>Q：還沒想？</strong><br>
+          還沒想
+        </li>
+        <li>
+          <strong>Q：還沒想？</strong><br>
+         還沒想
+        </li>
+      </ul>
+      <div class="contact-details"> <!-- 聯絡資訊 -->
+        <p>
+          <i class='bx bx-envelope'></i> <!-- 信箱 icon -->
+          客服信箱：<a href="mailto:wsbp.info@gmail.com">wsbp.info@gmail.com</a>
+        </p>
+        <p>
+          <i class='bx bx-time'></i> <!-- 時間 icon -->
+          服務時間：週一至週五 09:00~18:00
+        </p>
+        <p>
+          <i class='bx bx-error'></i> <!-- 全民檢舉 icon -->
+          全民檢舉：
+          <a href="index.php#subscribe">點我過去</a> <!-- 錨點連到首頁subscribe區塊 -->
+        </p>
+      </div>
+    </section>
+    <!-- 返回首頁按鈕放最下方，且置中 -->
+    <a href="index.php" class="back-home-btn">
+      <i class='bx bx-home'></i> 返回首頁
+    </a>
+  </div>
+</body>
+</html>
