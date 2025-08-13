@@ -3,10 +3,16 @@
 require_once 'vendor/autoload.php';
 session_start();
 
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+
+
 // 初始化 Google Client
 $client = new Google_Client();
-$client->setClientId('252515924130-28srma0olh5ednls8v1rkjl4esoui0jr.apps.googleusercontent.com');
-$client->setClientSecret('***REMOVED***');
+$googleClientId = getenv('GOOGLE_CLIENT_ID') ?: '';
+$googleClientSecret = getenv('GOOGLE_CLIENT_SECRET') ?: '';
 $client->setRedirectUri('http://localhost/topicsproject1/index.php'); // 確保這個網址與你在 Google Console 設定的完全一致
 $client->addScope("email");
 $client->addScope("profile");
