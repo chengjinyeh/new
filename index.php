@@ -1,14 +1,12 @@
 <?php
 // 引入 Google API 客戶端庫並啟動 session
-require_once 'vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 session_start();
 
 // 初始化 Google Client
 $client = new Google_Client();
-$googleClientId = getenv('GOOGLE_CLIENT_ID') ?: '';
-$googleClientSecret = getenv('GOOGLE_CLIENT_SECRET') ?: '';
-$client->setClientId($googleClientId);
-$client->setClientSecret($googleClientSecret);
+$client->setClientId(getenv('GOOGLE_CLIENT_ID') ?: '');
+$client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET') ?: '');
 $client->setRedirectUri('http://localhost/topicsproject1/index.php');
 $client->addScope('email');
 $client->addScope('profile');
