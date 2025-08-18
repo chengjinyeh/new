@@ -160,10 +160,10 @@ if (isset($_GET['code'])) {
 
                     
                 </div>
-                <div class="home__images"> <!-- 首頁右側圖片區塊 -->
-                    <div class="home__img">
-                        <img src="assets/img/logo1.png" alt=""> <!-- 放置 Logo 圖片 -->
-                    </div>  
+                <div class="home__images">
+                    <div class="home__img-wrapper">
+                        <img src="assets/img/logo1.png" alt="Logo" class="home__logo-img">
+                    </div>
                 </div>
             </div>
         </section>

@@ -397,17 +397,23 @@ box-shadow: 0 4px 8px hsla(228, 66%, 45%, .25);
   border-radius: 135px 135px 0 0;
 }
 
-.home__img{
-  position: absolute;
-  width: 250px;
-  height: 300px;
-  overflow: hidden;
-  border-radius: 125px 125px 12px 12px;
-  display: inline-flex;
-  /*align-items:flex-end;*/
-  bottom: -1.5rem;
-  box-shadow: 0 16px 32px hsla(228, 66%, 25%, .25);
+/* 修正跑版 Logo 樣式 */
+.home__img-wrapper {
+  max-width: 400px; /* 控制最大寬度 */
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.home__logo-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
 
 /*=============== BUTTON ===============*/
 .button{
