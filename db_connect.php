@@ -1,34 +1,34 @@
-<?php
-// SQL Server 伺服器名稱或 IP
-$serverName = "localhost,1433"; // 如果是本機預設埠，建議加上 ,1433
-// $serverName = "192.168.1.100,1433"; // 如果要從其他機器連線，用伺服器的 IP
+﻿<?php
+// SQL Server 隡箸??典?蝔望? IP
+$serverName = "localhost,1433"; // 憒??舀璈?閮剖?嚗遣霅啣?銝?,1433
+// $serverName = "192.168.1.100,1433"; // 憒?閬??嗡?璈???嚗隡箸??函? IP
 
-// 連線選項
+// ????賊?
 $connectionOptions = [
-    "Database" => "Wsbp",         // 你的資料庫名稱
-    "Uid" => "wsbpinfo",         // 你的 SQL Server 帳號
-    "PWD" => "5members",     // 你的 SQL Server 密碼
-    "CharacterSet" => "UTF-8"     // 避免中文亂碼
+    "Database" => "Wsbp",         // 雿?鞈?摨怠?蝔?
+    "Uid" => "wsbpinfo",         // 雿? SQL Server 撣唾?
+    "PWD" => "5members",     // 雿? SQL Server 撖Ⅳ
+    "CharacterSet" => "UTF-8"     // ?踹?銝剜?鈭Ⅳ
 ];
 
-// 嘗試建立連線
+// ?岫撱箇????
 $conn = sqlsrv_connect($serverName, $connectionOptions);
 
-// 檢查是否成功
+// 瑼Ｘ?臬??
 if ($conn === false) {
-    die(" 無法連線資料庫：" . print_r(sqlsrv_errors(), true));
+    die(" ?⊥????鞈?摨恬?" . print_r(sqlsrv_errors(), true));
 } else {
-    echo " 資料庫連線成功！";
+    echo " 鞈?摨恍????嚗?;
 }
 
 
-// 取得 Google 資訊
+// ?? Google 鞈?
 require_once 'vendor/autoload.php';
 
 $client = new Google_Client();
 $client->setClientId('YOUR_CLIENT_ID');
-$client->setClientSecret('YOUR_CLIENT_SECRET');
-$client->setRedirectUri('http://localhost/你的回呼頁面.php');
+$client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET') ?: '');
+$client->setRedirectUri('http://localhost/雿???.php');
 $client->addScope("email");
 $client->addScope("profile");
 
@@ -42,6 +42,6 @@ if (isset($_GET['code'])) {
     $email = $user_info->email;
     $name = $user_info->name;
 
-    // 然後才進行資料庫存取
+    // ?嗅??脰?鞈?摨怠???
 }
 ?>

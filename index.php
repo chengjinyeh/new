@@ -1,5 +1,17 @@
 <?php
 // 引入 Google API 客戶端庫並啟動 session
+feature/index
+require_once __DIR__ . '/vendor/autoload.php';
+session_start();
+
+// 初始化 Google Client
+$client = new Google_Client();
+$client->setClientId(getenv('GOOGLE_CLIENT_ID') ?: '');
+$client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET') ?: '');
+$client->setRedirectUri('http://localhost/topicsproject1/index.php');
+$client->addScope('email');
+$client->addScope('profile');
+
 require_once 'vendor/autoload.php';
 session_start();
 
@@ -17,6 +29,7 @@ $client->setRedirectUri('http://localhost/topicsproject1/index.php'); // 確保�
 $client->addScope("email");
 $client->addScope("profile");
 
+main
 // ========= 處理 Google 登入回調的核心程式碼 =========
 // 當 Google 授權後，會將使用者導回此頁面並附上 ?code=...
 if (isset($_GET['code'])) {
@@ -167,10 +180,16 @@ if (isset($_GET['code'])) {
 
                     
                 </div>
+feature/index
+                <div class="home__images">
+                    <div class="home__img-wrapper">
+                        <img src="assets/img/logo1.png" alt="Logo" class="home__logo-img">
+                    </div>
                 <div class="home__images"> <!-- 首頁右側圖片區塊 -->
                     <div class="home__img">
                         <img src="assets/img/logo1.png" alt=""> <!-- 放置 Logo 圖片 -->
                     </div>  
+main
                 </div>
             </div>
         </section>
@@ -352,9 +371,12 @@ if (isset($_GET['code'])) {
                 <a href="https://www.instagram.com/" class="footer_social-link">
                     <i class="bx bxl-instagram-alt"></i>
                 </a>
+feature/index
+
                 <a href="https://www.pinterest.com/" class="footer_social-link">
                     <i class="bx bxl-pinterest"></i>
                 </a>
+main
             </ul>
         </div>
     </div>

@@ -1,0 +1,8 @@
+﻿# 把任何單引號字串形式的 setClientSecret('...') 改為讀環境變數
+regex:\$client->setClientSecret\('(?:[^']*)'\)==$client->setClientSecret(getenv('GOOGLE_CLIENT_SECRET') ?: '')
+
+# 歷史裡若單獨出現以下佔位字/亂碼，也統一洗掉（可保留）
+你的Secret==<REMOVED>
+YOUR_CLIENT_SECRET==<REMOVED>
+\*\*\*REMOVED\*\*\*==<REMOVED>
+雿\?Secret==<REMOVED>
