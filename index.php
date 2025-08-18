@@ -345,9 +345,6 @@ if (isset($_GET['code'])) {
                 <a href="https://www.instagram.com/" class="footer_social-link">
                     <i class="bx bxl-instagram-alt"></i>
                 </a>
-                <a href="https://www.pinterest.com/" class="footer_social-link">
-                    <i class="bx bxl-pinterest"></i>
-                </a>
             </ul>
         </div>
     </div>

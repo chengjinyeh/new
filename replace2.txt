@@ -1,0 +1,5 @@
+﻿regex:setClientSecret\(\s*'[^']*'\s*\)==setClientSecret(getenv('GOOGLE_CLIENT_SECRET') ?: '')
+
+你的Secret==<REMOVED>
+YOUR_CLIENT_SECRET==<REMOVED>
+\*\*\*REMOVED\*\*\*==<REMOVED>
